@@ -1,0 +1,15 @@
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  margin: 8vh 3vh;
+}
+
+.beer-card {
+  height: 40vh;
+  border: 1px solid black;
+  border-radius: 15px;
+  &__img {
+    width: 100%;
+  }
+}
