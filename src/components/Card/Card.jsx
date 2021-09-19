@@ -16,8 +16,14 @@ const Card = () => {
     const beerCards = beerInfo.map(beer => (
       <div className="beer-card">
         <img src={beerImg} className="beer-card__img" />
-        <div className="">{beer.name}</div>
+        <div className="beer-card__name">{beer.name}</div>
+        <div className="beer-card__tagline">{beer.tagline}</div>
+        <div className="beer-card__pairing-header">Food Pairings</div>
+        <ul>
+          {beer.food_pairing.map(pairing => <li>{pairing}</li>)}
+        </ul>
       </div>
+
     ))
 
   return (
