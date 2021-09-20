@@ -3,7 +3,7 @@ import React from "react"
 import "./Card.scss";
 
 const Card = (props) => {
-  const { beerInfo } = props;
+  const { beerInfo, searchArray } = props;
 
   const beerCards = beerInfo.map(beer => (
       <div className="beer-card">
@@ -11,7 +11,7 @@ const Card = (props) => {
         <div className="beer-card__name">{beer.name}</div>
         <div className="beer-card__tagline">{beer.tagline}</div>
         <div className="beer-card__pairing-header">Food Pairings</div>
-        <ul>
+        <ul className="beer-card__list">
           {beer.food_pairing.map(pairing => <li>{pairing}</li>)}
         </ul>
       </div>

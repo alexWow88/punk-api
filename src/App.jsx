@@ -6,6 +6,7 @@ import Main from './components/Main/Main';
 function App() {
   const [beerInfo, setBeerInfo] = useState([]); 
   const [searchText, setSearchText] = useState("");
+  const [searchArray, setSearchArray] = useState([]);
   
   const fetchBeerData = () => {
     fetch("https://api.punkapi.com/v2/beers")
@@ -16,7 +17,8 @@ function App() {
     useEffect(() => {fetchBeerData()},[]);
 
   const filterSearchArr = () => {
-    const searchArray = beerInfo.map(beer => beer.name.includes(searchText));
+    setSearchArray(beerInfo.filter(beer => beer.name.includes(searchText)));
+    console.log(searchArray);
   }
 
 

@@ -15,7 +15,16 @@
   border-radius: 15px;
   height: 400px;
   background-color: white;
+  &__name {
+    font-size: 21px;
+    font-weight: bold;
+    padding-top: 2px;
+  }
   img {
     height: 40%;
+  }
+  &__list {
+    list-style-type: none;
+    padding: 0;
   }
 }
