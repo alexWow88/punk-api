@@ -14,6 +14,11 @@ function App() {
 
     useEffect(() => {fetchBeerData()},[]);
 
+    // const filterArr = (e) => {
+    //   e.preventDefault();
+    //   const filteredArr = beerInfo.map(beer => beer.includes(e.target.value))
+    // }
+
   return (
     <div className="App">
       <Navbar />

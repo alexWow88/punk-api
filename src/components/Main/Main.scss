@@ -1,10 +1,12 @@
 .main {
-  width: 100%;
+  width: 80%;
   background-color: rgb(41, 41, 41);
   font-family: Arial, Helvetica, sans-serif;
+  margin-left: 20%;
   &__title {
     font-size: 30px;
     color: rgb(0, 247, 255);
+    padding: 10px 0;
   }
 
   &__phrase {
