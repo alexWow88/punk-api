@@ -1,7 +1,6 @@
 import React from "react"
 // import React, { useState, useEffect } from 'react'
 import "./Card.scss";
-import beerImg from "../../assets/images/beer.jpg";
 
 const Card = (props) => {
   const { beerInfo } = props;
