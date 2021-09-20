@@ -2,12 +2,12 @@ import React from 'react';
 import Card from '../Card/Card';
 import "./Main.scss"
 
-const Main = () => {
-
+const Main = (props) => {
+  const { beerInfo } = props;
 
   return (
     <div className="main">
-      <Card />
+      <Card beerInfo={beerInfo} />
     </div>
   )
 }

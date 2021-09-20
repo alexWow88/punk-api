@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react'
-import "./Card.scss"
-import beerImg from "../../assets/images/beer.jpg"
+import React from "react"
+// import React, { useState, useEffect } from 'react'
+import "./Card.scss";
+import beerImg from "../../assets/images/beer.jpg";
 
-const Card = () => {
-  const [beerInfo, setBeerInfo] = useState([]); 
-  const fetchBeerData = () => {
-    fetch("https://api.punkapi.com/v2/beers")
-    .then(response => response.json())
-    .then(jsonResponse => setBeerInfo(jsonResponse))
-    .catch(err => console.log("err"))};
+const Card = (props) => {
+  const { beerInfo } = props;
 
-    useEffect(() => {fetchBeerData()});
-
-
-    const beerCards = beerInfo.map(beer => (
+  const beerCards = beerInfo.map(beer => (
       <div className="beer-card">
-        <img src={beerImg} className="beer-card__img" />
+        <img src={beer.image_url} className="beer-card__img" />
         <div className="beer-card__name">{beer.name}</div>
         <div className="beer-card__tagline">{beer.tagline}</div>
         <div className="beer-card__pairing-header">Food Pairings</div>
@@ -30,7 +23,7 @@ const Card = () => {
     <div className="card-grid">
       {beerCards}
     </div>
-  )
+    )
 }
 
 export default Card;
