@@ -20,11 +20,17 @@
     font-weight: bold;
     padding-top: 2px;
   }
+  
   img {
     height: 40%;
   }
   &__list {
     list-style-type: none;
     padding: 0;
+
+    &__pairing-header {
+      font-weight: bold;
+      padding-top: 10px;
+    }
   }
 }

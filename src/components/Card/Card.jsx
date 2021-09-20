@@ -10,8 +10,8 @@ const Card = (props) => {
         <img src={beer.image_url} className="beer-card__img" />
         <div className="beer-card__name">{beer.name}</div>
         <div className="beer-card__tagline">{beer.tagline}</div>
-        <div className="beer-card__pairing-header">Food Pairings</div>
         <ul className="beer-card__list">
+          <li className="beer-card__list__pairing-header">Food Pairings</li>
           {beer.food_pairing.map(pairing => <li>{pairing}</li>)}
         </ul>
       </div>
