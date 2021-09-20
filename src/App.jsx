@@ -5,7 +5,7 @@ import Main from './components/Main/Main';
 
 function App() {
   const [beerInfo, setBeerInfo] = useState([]); 
-  const [filteredSearchArr, setFilteredSearchArr] = useState([]);
+  const [searchText, setSearchText] = useState("");
   
   const fetchBeerData = () => {
     fetch("https://api.punkapi.com/v2/beers")
@@ -15,25 +15,17 @@ function App() {
 
     useEffect(() => {fetchBeerData()},[]);
 
-    const filterArr = (e) => {
-      e.preventDefault();
-      setFilteredSearchArr(beerInfo.filter(beer => beer.includes(e.target.value) == true))
-    }
+  const filterSearchArr = () => {
+    const searchArray = beerInfo.map(beer => beer.name.includes(searchText));
+  }
 
-  // if (filteredSearchArr == []) {
+
   return (
     <div className="App">
-      <Navbar filterArr={filterArr} />
-      { beerInfo && <Main beerInfo={beerInfo} />}
+      <Navbar searchText={searchText} setSearchText={setSearchText} filterSearchArr={filterSearchArr} />
+      { beerInfo && <Main beerInfo={beerInfo} searchArray={searchArray} />}
     </div>
   );
-// } else if (!filteredSearchArr) {
-//   return (
-//     <div className="App">
-//       <Navbar filterArr={filterArr} />
-//       { beerInfo && <Main beerInfo={filteredSearchArr} />}
-//     </div>
-//   );
 }
 
 export default App;
