@@ -16,7 +16,7 @@ function App() {
 
     useEffect(() => {fetchBeerData()},[]);
 
-  const filterSearchArr = () => {
+  const filterSearchArr = (searchText) => {
     setSearchArray(beerInfo.filter(beer => beer.name.includes(searchText)));
     console.log(searchArray);
   }
@@ -25,7 +25,7 @@ function App() {
   return (
     <div className="App">
       <Navbar searchText={searchText} setSearchText={setSearchText} filterSearchArr={filterSearchArr} />
-      { beerInfo && <Main beerInfo={beerInfo} searchArray={searchArray} />}
+      { beerInfo && <Main beerInfo={beerInfo} searchArray={searchArray} searchText={searchText} />}
     </div>
   );
 }

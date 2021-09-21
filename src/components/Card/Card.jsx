@@ -1,11 +1,11 @@
 import React from "react"
-// import React, { useState, useEffect } from 'react'
+import { useState } from 'react'
 import "./Card.scss";
 
 const Card = (props) => {
-  const { beerInfo, searchArray } = props;
-
-  const beerCards = beerInfo.map(beer => (
+  const { beerInfo, searchArray, searchText } = props;
+  
+  const beerCards = searchArray.map(beer => (
       <div className="beer-card">
         <img src={beer.image_url} className="beer-card__img" />
         <div className="beer-card__name">{beer.name}</div>

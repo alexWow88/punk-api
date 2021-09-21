@@ -7,7 +7,7 @@ const Navbar = (props) => {
   const handleChange = (e) => {
     e.preventDefault();
     setSearchText(e.target.value)
-    filterSearchArr();
+    filterSearchArr(e.target.value);
   }
 
   return (
